@@ -1,8 +1,9 @@
 package com.gorshkov.movieland.model;
 
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
@@ -14,6 +15,7 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
+@ToString
 @RequiredArgsConstructor
 public class Movie implements Serializable {
 
@@ -54,17 +56,5 @@ public class Movie implements Serializable {
     @Override
     public int hashCode() {
         return getClass().hashCode();
-    }
-
-    @Override
-    public String toString() {
-        return getClass().getSimpleName() + "(" +
-                "movie_id = " + movieId + ", " +
-                "movieName = " + movieName + ", " +
-                "year = " + year + ", " +
-                "county = " + county + ", " +
-                "description = " + description + ", " +
-                "rating = " + rating + ", " +
-                "price = " + price + ")";
     }
 }

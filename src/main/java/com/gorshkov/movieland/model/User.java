@@ -3,6 +3,7 @@ package com.gorshkov.movieland.model;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
@@ -13,6 +14,7 @@ import java.util.Objects;
 @Entity
 @Getter
 @Setter
+@ToString
 @Table(name = "users")
 @RequiredArgsConstructor
 public class User implements Serializable {
@@ -42,14 +44,5 @@ public class User implements Serializable {
     @Override
     public int hashCode() {
         return getClass().hashCode();
-    }
-
-    @Override
-    public String toString() {
-        return getClass().getSimpleName() + "(" +
-                "user_id = " + userId + ", " +
-                "userName = " + userName + ", " +
-                "email = " + email + ", " +
-                "password = " + password + ")";
     }
 }

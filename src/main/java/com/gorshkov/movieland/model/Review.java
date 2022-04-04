@@ -3,6 +3,7 @@ package com.gorshkov.movieland.model;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
@@ -11,6 +12,7 @@ import java.util.Objects;
 @Entity
 @Getter
 @Setter
+@ToString
 @RequiredArgsConstructor
 public class Review {
 
@@ -38,15 +40,5 @@ public class Review {
     @Override
     public int hashCode() {
         return getClass().hashCode();
-    }
-
-    @Override
-    public String toString() {
-        return "Review{" +
-                "review_id=" + reviewId +
-                ", review='" + review + '\'' +
-                ", userName='" + userName + '\'' +
-                ", movieName='" + movieName + '\'' +
-                '}';
     }
 }
